@@ -4,56 +4,51 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Enumeration
+namespace Enumeration2
 {
+    enum DaysOfWeek
+    {
+        Monday,
+        Tuesday,
+        Wednesday,
+        Thursday,
+        Friday,
+        Saturday,
+        Sunday
+    }
+
+  
     internal class Program
     {
-        enum DaysOfWeek
-            { 
-            Monday,
-            Tuesday,
-            Wednesday,
-            Thursday,
-            Friday,
-            Saturday,
-            Sunday
+        public void disp()
 
+        {
+            Console.WriteLine("<----Enumerations---->");
+            Console.WriteLine();
         }
-
         static void Main(string[] args)
         {
+            Program pg = new Program();
+            pg.disp();
+
             // 1
-            DaysOfWeek birthday = DaysOfWeek.Wednesday;
 
-            // DaysOfWeek --> enum
-            // birthday --> enum Variable
+            DaysOfWeek birt = DaysOfWeek.Wednesday;
+            Console.WriteLine(birt);
+            
+            // 2 enum to int
+            Console.WriteLine((int)DaysOfWeek.Wednesday);
 
+            // 3 interger to enum
+            Console.WriteLine("Last day of week is " + (DaysOfWeek)6);
 
-            // 1 
-            // Explicit Converion
-            // enum to values
+            // 4 enum to int 
+            int x = Convert.ToInt32(DaysOfWeek.Sunday);
+            Console.WriteLine("Sunday is on "+x+"th day of a week");
 
-            int x = Convert.ToInt32(DaysOfWeek.Monday);  
+            // 5
 
-            // 2 enum to values
-
-            int y = (int)DaysOfWeek.Sunday;
-
-
-            // 1. b
-            Console.WriteLine(Convert.ToInt32(DaysOfWeek.Thursday));
-
-            // 2 b
-            Console.WriteLine((int)DaysOfWeek.Friday);
-
-            // 1.  values to enums
-            // explicit converion
-
-            DaysOfWeek day = (DaysOfWeek)3; // Explicit
-
-            Console.WriteLine(day);
-
-            // if enum member 3 not present then it will print 3
+        
 
         }
     }
