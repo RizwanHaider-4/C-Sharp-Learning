@@ -4,40 +4,56 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace InputOutput
+namespace Enumeration
 {
     internal class Program
     {
+        enum DaysOfWeek
+            { 
+            Monday,
+            Tuesday,
+            Wednesday,
+            Thursday,
+            Friday,
+            Saturday,
+            Sunday
+
+        }
+
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter a Name");
-            String name = Console.ReadLine();
+            // 1
+            DaysOfWeek birthday = DaysOfWeek.Wednesday;
 
-            Console.WriteLine("Enter a Registration Number");
-            String reg = Console.ReadLine();
-
-            Console.WriteLine("Enter age");
-            double age = Double.Parse(Console.ReadLine());
-
-            Console.WriteLine("Enter a Blood Gropu");
-            String bg = Console.ReadLine();
-
-            Console.WriteLine("Favorite number");
-            int fav = int.Parse(Console.ReadLine());
-
-            Console.WriteLine("Enter a Favourite Character");
-            char fav_char = Char.Parse(Console.ReadLine());
-
-            Console.WriteLine("/----Details-----/");
-            Console.WriteLine("Name is               :"+name);
-            Console.WriteLine("Registration number   :"+reg);
-            Console.WriteLine("Age is                :"+age);
-            Console.WriteLine("Blood Group is        :"+bg);
-            Console.WriteLine("Favourite Number      :"+fav);
-            Console.WriteLine("Favourite Character   :"+fav_char);
+            // DaysOfWeek --> enum
+            // birthday --> enum Variable
 
 
+            // 1 
+            // Explicit Converion
+            // enum to values
 
+            int x = Convert.ToInt32(DaysOfWeek.Monday);  
+
+            // 2 enum to values
+
+            int y = (int)DaysOfWeek.Sunday;
+
+
+            // 1. b
+            Console.WriteLine(Convert.ToInt32(DaysOfWeek.Thursday));
+
+            // 2 b
+            Console.WriteLine((int)DaysOfWeek.Friday);
+
+            // 1.  values to enums
+            // explicit converion
+
+            DaysOfWeek day = (DaysOfWeek)3; // Explicit
+
+            Console.WriteLine(day);
+
+            // if enum member 3 not present then it will print 3
 
         }
     }
